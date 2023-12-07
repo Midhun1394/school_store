@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shool store</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>School store</h2>
+    <form method="post" action="{% url 'sub' %}">
+        {% csrf_token %}
+
+        <!-- Name -->
+        <div class="form-group">
+            <label for="id_name">Name:</label>
+            <input type="text" id="id_name" name="name" class="form-control" required>
+        </div>
+
+        <!-- DOB -->
+        <div class="form-group">
+            <label for="id_dob">DOB:</label>
+            <input type="date" id="id_dob" name="dob" class="form-control" required>
+        </div>
+
+        <!-- AGE -->
+        <div class="form-group">
+            <label for="id_age">Age:</label>
+            <input type="number" id="id_age" name="age" class="form-control" required>
+        </div>
+
+        <!-- GENDER -->
+        <div class="form-group">
+            <label for="id_gender">Gender:</label>
+            <select id="id_gender" name="gender" class="form-control" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <!-- PHONE NUMBER -->
+        <div class="form-group">
+            <label for="id_phone_number">Phone Number:</label>
+            <input type="tel" id="id_phone_number" name="phone_number" class="form-control" required>
+        </div>
+
+        <!-- MAIL ID -->
+        <div class="form-group">
+            <label for="id_mail_id">Mail ID:</label>
+            <input type="email" id="id_mail_id" name="mail_id" class="form-control" required>
+        </div>
+
+        <!-- ADDRESS -->
+        <div class="form-group">
+            <label for="id_address">Address:</label>
+            <textarea id="id_address" name="address" class="form-control" required></textarea>
+        </div>
+
+        <!-- Department Dropdown -->
+        <div class="form-group">
+        <script src="{% static 'myfirst.js' %}"></script>
+
+         <label for="id_purpose">department:</label>
+         <select name="meal" id="meal" onChange="changecat(this.value);" class="form-control" required>
+         <option value="" disabled selected>Department</option><option value="A">Computer science</option>
+         <option value="B">Commerce</option>
+         <option value="C">Humanities</option>
+         <option value="D">Bio Maths</option>
+         <option value="E">Biology</option>
+         </select>
+         <br>
+         <label for="id_purpose">sub course:</label>
+         <select name="category" id="category" class="form-control" required>
+         <option value="" disabled selected>sub Course</option>
+         </select>
+
+        </div>
+
+
+        <!-- Purpose Dropdown -->
+        <div class="form-group">
+            <label for="id_purpose">Purpose:</label>
+            <select id="id_purpose" name="purpose" class="form-control" required>
+                <option value="enquiry">Enquiry</option>
+                <option value="place_order">Place Order</option>
+                <option value="return">Return</option>
+            </select>
+        </div>
+
+        <!-- Materials Provided (Checkbox) -->
+        <div class="form-group">
+            <label>Materials Provided:</label>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="id_material_notebook" name="materials_provided" value="notebook">
+                <label class="form-check-label" for="id_material_notebook">Notebook</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="id_material_pen" name="materials_provided" value="pen">
+                <label class="form-check-label" for="id_material_pen">Pen</label>
+            </div>
+             <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="paper" name="materials_provided" value="paper">
+                <label class="form-check-label" for="paper">Paper</label>
+            </div>
+            <!-- Add more checkboxes for other materials -->
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit and Logout</button>
+    </form>
+</div>
+
+<!-- Include Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="container mt-5">
+
+
+</body>
+</html>
